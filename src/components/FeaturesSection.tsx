@@ -108,8 +108,7 @@ export default function FeaturesSection() {
           {collections.map((collection, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-2xl"
-              style={{ height: "clamp(220px, 25vw, 400px)" }}
+              className="group relative h-[400px] overflow-hidden rounded-2xl"
             >
               {/* Image with text baked in */}
               <Image
@@ -117,7 +116,7 @@ export default function FeaturesSection() {
                 alt={collection.title}
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="object-cover"
+                className="object-contain"
               />
             </div>
           ))}

@@ -27,7 +27,11 @@ export default function HeroSection() {
   return (
     <section
       className="relative w-full overflow-hidden"
-      style={{ aspectRatio: "1920/635", minHeight: "420px" }}
+      style={{
+        // Desktop: maintain the 1920/635 ratio. Mobile: fixed min-height so content fits.
+        aspectRatio: "1920/635",
+        minHeight: "clamp(420px, 33vw, 635px)",
+      }}
     >
       {/* Background Images with Fade */}
       {slides.map((slide, index) => (
@@ -53,16 +57,16 @@ export default function HeroSection() {
       {/* Content Overlay */}
       <div
         className="relative z-10 flex h-full items-center"
-        style={{ paddingLeft: "clamp(1.5rem, 7.29vw, 140px)", paddingRight: "clamp(1.5rem, 7.29vw, 140px)" }}
+        style={{ paddingLeft: "clamp(1.25rem, 7.29vw, 140px)", paddingRight: "clamp(1.25rem, 4vw, 60px)" }}
       >
-        <div style={{ maxWidth: "clamp(280px, 28.65vw, 550px)", width: "100%" }}>
+        <div style={{ maxWidth: "clamp(260px, 28.65vw, 550px)", width: "100%" }}>
           <h1
             style={{
               color: "#000000",
               fontSize: "clamp(1.75rem, 4.17vw, 80px)",
               lineHeight: "130%",
             }}
-            className="mb-4 font-semibold tracking-normal"
+            className="mb-3 font-semibold tracking-normal"
           >
             Travel in Style
             <br />
@@ -71,7 +75,7 @@ export default function HeroSection() {
           <p
             style={{
               color: "#000000",
-              fontSize: "clamp(0.875rem, 1.04vw, 20px)",
+              fontSize: "clamp(0.85rem, 1.04vw, 20px)",
               lineHeight: "120%",
             }}
             className="mb-6 font-normal tracking-normal"
@@ -86,7 +90,7 @@ export default function HeroSection() {
               fontSize: "clamp(0.8rem, 0.83vw, 16px)",
               lineHeight: "100%",
             }}
-            className="inline-flex items-center gap-2.5 rounded-lg border border-[#190E05] bg-[#1A0E05] px-6 py-3.5 font-medium text-white transition-colors hover:bg-[#525252]"
+            className="inline-flex items-center gap-2.5 rounded-lg border border-[#190E05] bg-[#1A0E05] px-7 py-3.5 font-medium text-white transition-colors hover:bg-[#525252]"
           >
             Shop Now
             <svg
